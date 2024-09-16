@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MyApp01</string>
     <string name="greeting">Hello My  Friend</string>
+    <string name="Example">5 + 7 =</string>
+    <string name="answer">Answer</string>
+    <string name="enter_the_answer">Enter the answer</string>
+    <string name="ButtonText">Try</string>
 </resources>
