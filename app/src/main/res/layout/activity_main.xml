@@ -4,68 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/EditTextSampleTask"
-        android:layout_width="match_parent"
+        android:id="@+id/editTextSampleTask"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
         android:text="@string/example"
-        android:textAlignment="center"
-        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"  />
 
     <EditText
-        android:id="@+id/PlainTextSampleAnswer"
+        android:id="@+id/plainTextSampleAnswer"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
+        android:layout_marginRight="8dp"
         android:hint="@string/input_the_answer"
         android:inputType="number"
-        android:textColorHint="@color/black"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EditTextSampleTask" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSampleTask" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
         android:text="@string/buttonText"
-        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PlainTextSampleAnswer" />
+        app:layout_constraintTop_toBottomOf="@+id/plainTextSampleAnswer"/>
     <!--here are 2 following variants of textView where view on device pixel4 and HonorX6 are not similar-->
     <TextView
         android:id="@+id/correctView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginTop="40dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/holo_green_light"
         android:padding="24dp"
         android:text="@string/correct_answer"
-        android:textColor="@color/white"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="48sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,11 +62,10 @@
 
     <TextView
         android:id="@+id/incorrectView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:background="@android:color/holo_red_light"
         android:padding="24dp"
         android:text="@string/wrong_answer"
@@ -87,7 +74,6 @@
         android:textSize="48sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
