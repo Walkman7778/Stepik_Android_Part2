@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyApp03Messenger</string>
+    <string name="name">InputMessage</string>
+    <string name="btnSendMessage">BtnSendMessage</string>
+    <string name="textViewRecivMsg1">Your message is :</string>
+    <string name="textViewRecivMsg2">TextView</string>
+</resources>
