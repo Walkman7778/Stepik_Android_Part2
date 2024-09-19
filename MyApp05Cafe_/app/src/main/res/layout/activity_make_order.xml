@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MakeOrderActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+
+    <CheckBox
+        android:id="@+id/checkBoxMilk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:text="@string/milk"
+        android:textColor="@color/purple_500"
+        tools:layout_editor_absoluteX="284dp"
+        tools:layout_editor_absoluteY="341dp" />
+
+    <TextView
+        android:id="@+id/textViewGreetings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/greetings"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="487dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGruopDrinks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewAdditives"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/additives"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="48dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:text="@string/sugar"
+        android:textColor="@color/purple_500"
+        tools:layout_editor_absoluteX="29dp"
+        tools:layout_editor_absoluteY="424dp" />
+
+    <TextView
+        android:id="@+id/textViewDrinkType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/drinkType"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="102dp" />
+
+    <Spinner
+        android:id="@+id/spinnerTea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:entries="@array/types_of_tea"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="168dp" />
+
+    <Spinner
+        android:id="@+id/spinnerCoffee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:entries="@array/types_of_coffee"
+        android:minHeight="48dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="-14dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <Button
+        android:id="@+id/buttonMakeOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/buttonOrder"
+
+
+        tools:layout_editor_absoluteX="-31dp"
+        tools:layout_editor_absoluteY="295dp" />
+
+    <RadioButton
+        android:id="@+id/radioButtonCoffe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:text="@string/coffee"
+        tools:layout_editor_absoluteX="232dp"
+        tools:layout_editor_absoluteY="413dp" />
+
+    <RadioButton
+        android:id="@+id/radioButtonTea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:text="@string/tea"
+        android:textColor="@color/purple_500"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="413dp" />
+</android.support.constraint.ConstraintLayout>

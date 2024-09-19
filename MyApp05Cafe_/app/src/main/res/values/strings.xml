@@ -5,4 +5,26 @@
     <string name="password_hint">Введите пароль</string>
     <string name="SignInButton">Войти</string>
     <string name="servis_burger_king">Burger King</string>
+    <string name="greetings">Привет %s! Что пожелаете?</string>
+    <string name="tea">Чай</string>
+    <string name="coffee">Кофе</string>
+    <string name="additives">Что добавить в ваш %s</string>
+    <string name="sugar">Сахар</string>
+    <string name="milk">Молоко</string>
+    <string name="lemon">Лимон</string>
+    <string name="drinkType">Выберите тип напитка</string>
+    <string name="buttonOrder">Сделать заказ</string>
+    <array name="types_of_tea">
+        <item>Зеленый</item>
+        <item>Чёрный</item>
+        <item>Клубничный</item>
+        <item>Облепиховый</item>
+    </array>
+    <array name="types_of_coffee">
+        <item>Капучино</item>
+        <item>Американо</item>
+        <item>Латте</item>
+        <item>Эспрессо</item>
+        <item>Дабл</item>
+    </array>
 </resources>
