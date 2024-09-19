@@ -61,13 +61,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         Log.d("MainActivity", "onStart");
     }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("MainActivity", "onStop");
-    }
-
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState){
         super.onSaveInstanceState(outState);
@@ -76,6 +69,31 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("score1", score1);
         outState.putInt("score2", score2);
 
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        Log.d("MainActivity", "onPostResume");
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity", "onStop");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("MainActivity", "onRestart");
     }
 
     @Override
