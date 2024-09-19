@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyApp05Cafe</string>
+    <string name="greeting">Добро пожаловать</string>
+    <string name="name_hint">Введите имя</string>
+    <string name="password_hint">Введите пароль</string>
+    <string name="SignInButton">Войти</string>
+    <string name="servis_burger_king">Burger King</string>
 </resources>
