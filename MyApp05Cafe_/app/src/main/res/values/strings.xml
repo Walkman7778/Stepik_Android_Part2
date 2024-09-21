@@ -18,6 +18,7 @@
     <string name="drink">Drink</string>
     <string name="drink_type">drink_type</string>
     <string name="additives_layout3">Additives</string>
+    <string name="error_fields_empty">Пожалуйста заполните все поля</string>
     <array name="types_of_tea">
         <item>Зеленый</item>
         <item>Чёрный</item>
