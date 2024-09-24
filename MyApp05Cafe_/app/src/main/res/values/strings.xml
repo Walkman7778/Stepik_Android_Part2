@@ -32,4 +32,8 @@
         <item>Эспрессо</item>
         <item>Дабл</item>
     </array>
+    <string name="resultName"></string>
+    <string name="resultDrink"></string>
+    <string name="resultDrinkType"></string>
+    <string name="resultDrinkAdditives"></string>
 </resources>

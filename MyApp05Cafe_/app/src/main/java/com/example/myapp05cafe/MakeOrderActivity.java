@@ -39,6 +39,7 @@ public class MakeOrderActivity extends AppCompatActivity {
 
     private String additives1;
 
+
     private String drinkType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +88,7 @@ public class MakeOrderActivity extends AppCompatActivity {
             additives.add(lemon.getText().toString());
         }
 
-        String drinkType = "";
+        drinkType = "";
         if (tea.isChecked()){
             drinkType = spinenrTea.getSelectedItem().toString();
         } else if (coffee.isChecked()) {
