@@ -84,7 +84,7 @@ public class MakeOrderActivity extends AppCompatActivity {
         if (milk.isChecked()) {
             additives.add(milk.getText().toString());
         }
-        if (lemon.isChecked()) {
+        if (lemon.isChecked() && tea.isChecked()) {
             additives.add(lemon.getText().toString());
         }
 
