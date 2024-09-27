@@ -6,15 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <!--ScrollView will  contain a  LinearLayout with all  notes-->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+
+        <!--creating a layout which  will contain all  notes-->
         <LinearLayout
             android:id="@+id/linearLayoutsNotes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical" />
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
