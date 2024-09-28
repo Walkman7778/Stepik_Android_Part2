@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyAppTodo List</string>
+    <string name="lowRadioButtonText">Low</string>
+    <string name="mediumRadioButtonText">Normal</string>
+    <string name="highRadioButtonText">High</string>
+    <string name="enter_noteHint">Enter note</string>
+    <string name="btnMakeNoteText">Make note</string>
 </resources>

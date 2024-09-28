@@ -11,6 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAppTodoList"
         tools:targetApi="31">
+
+
+        <activity
+            android:name=".AddNoteActivity"
+            android:exported="false"
+        />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
