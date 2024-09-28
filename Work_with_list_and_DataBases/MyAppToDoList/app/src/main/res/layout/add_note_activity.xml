@@ -57,6 +57,7 @@
             android:background="@android:color/holo_orange_light"
             android:minHeight="48dp"
             android:text="@string/mediumRadioButtonText"
+            android:checked="true"
             android:textAlignment="center"
             android:textSize="21sp" />
 
