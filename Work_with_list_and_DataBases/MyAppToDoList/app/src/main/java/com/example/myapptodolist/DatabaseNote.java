@@ -27,7 +27,7 @@ public class DatabaseNote {
 
 
     // here we initialize the notes list and firstly add 20 notes to it in random way
-    public DatabaseNote() {
+    private DatabaseNote() {
 
         Random random =new Random();
         for (int i = 0; i < 20; i++){
