@@ -45,7 +45,7 @@ public class DatabaseNote {
 
 
     // method which remove note from note list
-    private void removeNote(int id){
+    public void removeNote(int id){
         for (int i = 0; i < notes.size(); i++){
             Note note = notes.get(i);
             if (note.getId() == id){

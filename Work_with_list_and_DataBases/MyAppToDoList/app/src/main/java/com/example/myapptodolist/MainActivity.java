@@ -69,6 +69,13 @@ public class MainActivity extends AppCompatActivity {
                     R.layout.note_item,
                     linearLayoutsNotes,
                     false               );
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    databaseNote.removeNote(note.getId());
+                    showNotes();
+                }
+            });
 
             TextView textViewNote = view.findViewById(R.id.textViewNote);
             textViewNote.setText(note.getText());
