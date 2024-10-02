@@ -17,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout linearLayoutsNotes;
     private FloatingActionButton buttonAddNotes;
 
-    // creating array of notes
-    private ArrayList<Note> notes = new ArrayList<>();
+    // creating array of notes by calling DatabaseNote.getInstance(); - the database from class
+    // DatabaseNote
+    private DatabaseNote databaseNote = DatabaseNote.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +27,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initViews();
 
-        // next cycle fill array notes with elements containing fields from class Note: text-context
-        // id and priority of message
-        Random random =new Random();
-        for (int i = 0; i < 20; i++){
-            Note note = new Note("This is message № " + i, i, random.nextInt(3));
-            notes.add(note);
-        }
-
-        showNotes();
         buttonAddNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+    // here I moved method show notes from action - on create - to the action on Resume it was done
+    // because we must recreate activity aster returning from AddNoteActivity
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        showNotes();
+    }
+
     private void initViews(){
         linearLayoutsNotes = findViewById(R.id.linearLayoutsNotes);
         buttonAddNotes = findViewById(R.id.buttonAddNote);
@@ -54,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
     // creating method which show all notes
     private void showNotes(){
-        for (Note note:notes){
+        // here I used linearLayoutsNotes.removeAllViews() for clearing layout before recreating it
+        linearLayoutsNotes.removeAllViews();
+        for (Note note: databaseNote.getNotes()){
 
 
             // creating view off note_item sample layout
@@ -87,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
             int color = ContextCompat.getColor(this, colorResId);
 
             textViewNote.setBackgroundColor(color);
-
-
 
 
             linearLayoutsNotes.addView(view);

@@ -13,6 +13,9 @@ public class AddNoteActivity extends AppCompatActivity {
 
 
 
+    // creating local related (Array list ) - database for working with it in this activity
+    private DatabaseNote databaseNote = DatabaseNote.getInstance();
+
     //creating vars
 
     private EditText editText;
@@ -53,11 +56,19 @@ public class AddNoteActivity extends AppCompatActivity {
     private void saveNote(){
         String text = editText.getText().toString().trim();
         int priority = getPriority();
+        // adding an Id for relative note from note list
+        int id = databaseNote.getNotes().size();
+        // creating and adding next note to the related database example
+        Note note = new Note(text, id, priority);
+        databaseNote.andNote(note);
+
+        finish();
+
     }
 
 
     //function gets state of radioButton and set priority -- controling state of button with f()
-    // isChecked()
+    //isChecked()
     private int getPriority(){
         int priority;
         if (radioButtonLow.isChecked()){
