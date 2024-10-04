@@ -1,10 +1,13 @@
 package com.example.myapptodolist;
 
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +20,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewNotes;
     private FloatingActionButton buttonAddNotes;
+    private NotesAdapter notesAdapter;
 
     // creating array of notes by calling DatabaseNote.getInstance(); - the database from class
     // DatabaseNote
@@ -27,7 +31,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
+        notesAdapter = new NotesAdapter();
 
+
+        // realization of erasing an element from the database by calling ClickListener which is
+        // connected  by  the  adapter - adapter get an  activity OnClickListener in the class
+        // NoteAdapter method OnBindViewHolder
+         notesAdapter.setOnNoteClickListener(new NotesAdapter.OnNoteClickListener() {
+            @Override
+            public void OnNoteClick(Note note) {
+                databaseNote.removeNote(note.getId());
+                // refreshing view to show how  the  element erasing
+                showNotes();
+            }
+        });
+
+        recyclerViewNotes.setAdapter(notesAdapter);
+
+
+        recyclerViewNotes.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
         buttonAddNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,61 +75,17 @@ public class MainActivity extends AppCompatActivity {
     private void initViews(){
         recyclerViewNotes = findViewById(R.id.recyclerViewNotes);
         buttonAddNotes = findViewById(R.id.buttonAddNote);
-    }
+       }
 
     // creating method which show all notes
     private void showNotes(){
-        // here I used linearLayoutsNotes.removeAllViews() for clearing layout before recreating it
-        linearLayoutsNotes.removeAllViews();
-        for (Note note: databaseNote.getNotes()){
 
-
-            // creating view off note_item sample layout
-            // getLayoutInflater().inflate get as arguments : layout sample id, layout output, and
-            // attachment in my case false
-
-            View view = getLayoutInflater().inflate(
-                    R.layout.note_item,
-                    linearLayoutsNotes,
-                    false               );
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    databaseNote.removeNote(note.getId());
-                    showNotes();
-                }
-            });
-
-            TextView textViewNote = view.findViewById(R.id.textViewNote);
-            textViewNote.setText(note.getText());
-
-            // creating resource value color for note background
-            int colorResId;
-            switch (note.getPriority()){
-                case 0:
-                    colorResId = android.R.color.holo_green_light;
-                    break;
-                case 1:
-                    colorResId = android.R.color.holo_orange_light;
-                    break;
-                default:
-                    colorResId = android.R.color.holo_red_light;
-                    break;
-            }
-
-            // here function ContextCompat convert value in color for note.
-            int color = ContextCompat.getColor(this, colorResId);
-
-            textViewNote.setBackgroundColor(color);
-
-
-            linearLayoutsNotes.addView(view);
+        notesAdapter.setNotes(databaseNote.getNotes());
         }
-    }
-
-
-
-
-
-
 }
+
+
+
+
+
+
