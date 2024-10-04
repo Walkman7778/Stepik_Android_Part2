@@ -2,6 +2,7 @@ package com.example.myapptodolist;
 
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -37,9 +39,34 @@ public class MainActivity extends AppCompatActivity {
         // realization of erasing an element from the database by calling ClickListener which is
         // connected  by  the  adapter - adapter get an  activity OnClickListener in the class
         // NoteAdapter method OnBindViewHolder
-         notesAdapter.setOnNoteClickListener(new NotesAdapter.OnNoteClickListener() {
+        /* notesAdapter.setOnNoteClickListener(new NotesAdapter.OnNoteClickListener() {
             @Override
             public void OnNoteClick(Note note) {
+                databaseNote.removeNote(note.getId());
+                // refreshing view to show how  the  element erasing
+                showNotes();
+            }
+        });*/
+
+        // realization of deleting note-(database.note) by swipe on left or right
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                0,
+                ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT
+        ) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView,
+                                  @NonNull RecyclerView.ViewHolder viewHolder,
+                                  @NonNull RecyclerView.ViewHolder viewHolder1) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+
+                int position = viewHolder.getAdapterPosition();
+                Note note = notesAdapter.getNotes().get(position);
+
+
                 databaseNote.removeNote(note.getId());
                 // refreshing view to show how  the  element erasing
                 showNotes();
@@ -49,7 +76,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewNotes.setAdapter(notesAdapter);
 
 
-        recyclerViewNotes.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
+        recyclerViewNotes.setLayoutManager(new LinearLayoutManager(
+                this,
+                LinearLayoutManager.VERTICAL,
+                false));
+        // attaching itemTouchHelper to the layout recyclerViewNOtes
+        itemTouchHelper.attachToRecyclerView(recyclerViewNotes);
         buttonAddNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

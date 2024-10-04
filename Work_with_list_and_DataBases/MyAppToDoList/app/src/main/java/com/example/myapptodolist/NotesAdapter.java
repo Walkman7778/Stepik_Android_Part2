@@ -27,8 +27,9 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     }
 
 
-
-
+    public ArrayList<Note> getNotes() {
+        return new ArrayList<>(notes);
+    }
 
     @NonNull
     @Override
