@@ -2,9 +2,15 @@ package com.example.myapptodolist;
 
 import android.widget.TextView;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "notes")
 public class Note {
 
 
+
+    @PrimaryKey(autoGenerate = true)
     private String text;
     private int id;
     private int priority;
