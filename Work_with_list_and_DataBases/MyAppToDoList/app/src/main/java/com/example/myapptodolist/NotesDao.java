@@ -1,0 +1,24 @@
+package com.example.myapptodolist;
+
+
+import androidx.room.Dao;
+import androidx.room.Database;
+import androidx.room.Insert;
+import androidx.room.Query;
+
+import java.util.List;
+
+@Dao
+public interface NotesDao {
+
+    @Query("SELECT * FROM notes")
+    List<Note> getNote();
+
+    @Insert
+    void add(Note note);
+
+
+    @Query("DELETE FROM notes WHERE id = :id")
+    void remove(int id);
+
+}
