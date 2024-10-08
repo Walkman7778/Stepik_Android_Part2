@@ -16,12 +16,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewNotes;
     private FloatingActionButton buttonAddNotes;
     private NotesAdapter notesAdapter;
+
+    //creating example of class handler -  which  contain link  for  the  main thread
+    //this object can crunch messages of type runnable
+
+    private Handler handler = new Handler(Looper.getMainLooper());
 
     // creating array of notes by calling DatabaseNote.getInstance(); - the database from class
     // DatabaseNote
@@ -71,9 +80,29 @@ public class MainActivity extends AppCompatActivity {
                 Note note = notesAdapter.getNotes().get(position);
 
 
-                noteDatabase.notesDao().remove(note.getId());
-                // refreshing view to show how  the  element erasing
-                showNotes();
+                // creating new thread which permit to access ```noteDatabase.notesDao().
+                // remove(note.getId());``` from main thread
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        noteDatabase.notesDao().remove(note.getId());
+                        // refreshing view to show how  the  element erasing
+
+                        // this object handler call  in main  thread object runnable where  is
+                        // transmitted method show notes, because we cannot call a method crunching
+                        // data in background state(calling view element ) in the main thread
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                showNotes();
+                            }
+                        });
+
+                    }
+                });
+                thread.start();
+
+
             }
         });
 
@@ -114,7 +143,21 @@ public class MainActivity extends AppCompatActivity {
     // creating method which show all notes
     private void showNotes() {
 
-        notesAdapter.setNotes(noteDatabase.notesDao().getNotes());
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<Note> notes = noteDatabase.notesDao().getNotes();
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        notesAdapter.setNotes(notes);
+                    }
+                });
+
+            }
+        });
+        thread.start();
+
     }
 }
 

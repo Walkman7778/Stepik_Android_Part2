@@ -4,10 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+
+import java.util.List;
 
 public class AddNoteActivity extends AppCompatActivity {
 
@@ -23,6 +28,10 @@ public class AddNoteActivity extends AppCompatActivity {
     private RadioButton radioButtonMedium;
     private Button btnMakeNote;
 
+
+    // object handler gets as argument Looper.getMainLooper() what means - main activity - main
+    // thread
+    private Handler handler = new Handler(Looper.getMainLooper());
 
 
 
@@ -55,14 +64,36 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void saveNote(){
-        String text = editText.getText().toString().trim();
-        int priority = getPriority();
-        // adding an Id for relative note from note list
-        // creating and adding next note to the related database example
-        Note note = new Note(text,   priority);
-        noteDatabase.notesDao().add(note);
+        // creating new thread for launching method save note and adding handler for closing the
+        // saving note method  thread
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // adding an Id for relative note from note list
+                // creating and adding next note to the related database example
+                String text = editText.getText().toString().trim();
+                int priority = getPriority();
+                Note note = new Note(text,   priority);
+                noteDatabase.notesDao().add(note);
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                    }
+                });
 
-        finish();
+            }
+        });
+        thread.start();
+
+
+
+
+
+
+
+
+
 
     }
 
