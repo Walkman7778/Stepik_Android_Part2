@@ -3,7 +3,7 @@ package com.example.myapptodolist;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,8 +13,8 @@ public class AddNoteActivity extends AppCompatActivity {
 
 
 
-    // creating local related (Array list ) - database for working with it in this activity
-    private DatabaseNote databaseNote = DatabaseNote.getInstance();
+    // creating local related (List ) - database for working with it in this activity
+    private NoteDatabase noteDatabase;
 
     //creating vars
 
@@ -31,6 +31,7 @@ public class AddNoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_note_activity);
+        noteDatabase = NoteDatabase.getInstance(getApplication());
         initViews();
 
 
@@ -57,10 +58,9 @@ public class AddNoteActivity extends AppCompatActivity {
         String text = editText.getText().toString().trim();
         int priority = getPriority();
         // adding an Id for relative note from note list
-        int id = databaseNote.getNotes().size();
         // creating and adding next note to the related database example
-        Note note = new Note(text, id, priority);
-        databaseNote.andNote(note);
+        Note note = new Note(text,  0, priority);
+        noteDatabase.notesDao().add(note);
 
         finish();
 

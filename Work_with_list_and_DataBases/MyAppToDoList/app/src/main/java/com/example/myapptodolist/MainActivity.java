@@ -1,23 +1,22 @@
 package com.example.myapptodolist;
 
 import android.content.Intent;
-import android.graphics.drawable.GradientDrawable;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
-import android.util.Log;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Random;
+import androidx.annotation.NonNull;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
+
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerViewNotes;
@@ -26,12 +25,17 @@ public class MainActivity extends AppCompatActivity {
 
     // creating array of notes by calling DatabaseNote.getInstance(); - the database from class
     // DatabaseNote
-    private DatabaseNote databaseNote = DatabaseNote.getInstance();
+    private NoteDatabase noteDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        noteDatabase = NoteDatabase.getInstance(getApplication());
+
+
         initViews();
         notesAdapter = new NotesAdapter();
 
@@ -51,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // realization of deleting note-(database.note) by swipe on left or right
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
                 0,
-                ItemTouchHelper.LEFT|ItemTouchHelper.RIGHT
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT
         ) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView,
@@ -61,13 +65,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
 
                 int position = viewHolder.getAdapterPosition();
                 Note note = notesAdapter.getNotes().get(position);
 
 
-                databaseNote.removeNote(note.getId());
+                noteDatabase.notesDao().remove(note.getId());
                 // refreshing view to show how  the  element erasing
                 showNotes();
             }
@@ -91,9 +95,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
-
 
 
     // here I moved method show notes from action - on create - to the action on Resume it was done
@@ -104,16 +106,16 @@ public class MainActivity extends AppCompatActivity {
         showNotes();
     }
 
-    private void initViews(){
+    private void initViews() {
         recyclerViewNotes = findViewById(R.id.recyclerViewNotes);
         buttonAddNotes = findViewById(R.id.buttonAddNote);
-       }
+    }
 
     // creating method which show all notes
-    private void showNotes(){
+    private void showNotes() {
 
-        notesAdapter.setNotes(databaseNote.getNotes());
-        }
+        notesAdapter.setNotes(noteDatabase.notesDao().getNotes());
+    }
 }
 
 

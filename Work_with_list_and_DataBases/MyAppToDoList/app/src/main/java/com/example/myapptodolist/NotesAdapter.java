@@ -1,8 +1,9 @@
 package com.example.myapptodolist;
 
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +15,20 @@ import java.util.List;
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder> {
 
 
-    private ArrayList<Note> notes = new ArrayList<>();
+    private List<Note> notes = new ArrayList<>();
     private OnNoteClickListener onNoteClickListener;
 
     public void setOnNoteClickListener(OnNoteClickListener onNoteClickListener) {
         this.onNoteClickListener = onNoteClickListener;
     }
 
-    public void setNotes(ArrayList<Note> notes){
+    public void setNotes(List<Note> notes) {
         this.notes = notes;
         notifyDataSetChanged();
     }
 
 
-    public ArrayList<Note> getNotes() {
+    public List<Note> getNotes() {
         return new ArrayList<>(notes);
     }
 
@@ -52,7 +53,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
         // creating resource value color for note background
         int colorResId;
-        switch (note.getPriority()){
+        switch (note.getPriority()) {
             case 0:
                 colorResId = android.R.color.holo_green_light;
                 break;
@@ -79,8 +80,6 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         });
 
 
-
-
     }
 
     @Override
@@ -89,7 +88,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     }
 
 
-    class NotesViewHolder extends RecyclerView.ViewHolder{
+    class NotesViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textViewNote;
 
@@ -100,6 +99,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
         }
     }
+
     // realization of interface which transmit object note to the click listener in the method
     // OnBindViewHolder
     interface OnNoteClickListener {
