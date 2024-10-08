@@ -59,7 +59,7 @@ public class AddNoteActivity extends AppCompatActivity {
         int priority = getPriority();
         // adding an Id for relative note from note list
         // creating and adding next note to the related database example
-        Note note = new Note(text,  0, priority);
+        Note note = new Note(text,   priority);
         noteDatabase.notesDao().add(note);
 
         finish();

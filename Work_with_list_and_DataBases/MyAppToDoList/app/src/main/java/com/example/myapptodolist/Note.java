@@ -22,6 +22,11 @@ public class Note {
         this.priority = priority;
     }
 
+    @Ignore
+    public Note(String text, int priority){
+        this(text, 0, priority);
+
+    }
 
 
 
