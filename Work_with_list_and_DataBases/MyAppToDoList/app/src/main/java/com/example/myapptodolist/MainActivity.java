@@ -6,18 +6,18 @@ import androidx.annotation.NonNull;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import androidx.core.content.ContextCompat;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import androidx.appcompat.widget.LinearLayoutCompat;
+
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 
-import android.os.Handler;
-import android.os.Looper;
+
 import android.view.View;
 
 import java.util.List;
@@ -27,10 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton buttonAddNotes;
     private NotesAdapter notesAdapter;
 
-    //creating example of class handler -  which  contain link  for  the  main thread
-    //this object can crunch messages of type runnable
 
-    private Handler handler = new Handler(Looper.getMainLooper());
 
     // creating array of notes by calling DatabaseNote.getInstance(); - the database from class
     // DatabaseNote
@@ -91,12 +88,7 @@ public class MainActivity extends AppCompatActivity {
                         // this object handler call  in main  thread object runnable where  is
                         // transmitted method show notes, because we cannot call a method crunching
                         // data in background state(calling view element ) in the main thread
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                showNotes();
-                            }
-                        });
+
 
                     }
                 });
@@ -115,6 +107,19 @@ public class MainActivity extends AppCompatActivity {
                 false));
         // attaching itemTouchHelper to the layout recyclerViewNOtes
         itemTouchHelper.attachToRecyclerView(recyclerViewNotes);
+
+        // here I subscribe  to the object of LiveData. It is made for saving phone resources,
+        // in such a way we don't need methods show and on Onswipe, the data is updating
+        // automatically. Also  we  don't  need a handler.
+        noteDatabase.notesDao().getNotes().observe(this, new Observer<List<Note>>() {
+            @Override
+            public void onChanged(List<Note> notes) {
+                notesAdapter.setNotes(notes);
+            }
+        });
+
+
+
         buttonAddNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,38 +132,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // here I moved method show notes from action - on create - to the action on Resume it was done
-    // because we must recreate activity aster returning from AddNoteActivity
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        showNotes();
-    }
-
     private void initViews() {
         recyclerViewNotes = findViewById(R.id.recyclerViewNotes);
         buttonAddNotes = findViewById(R.id.buttonAddNote);
     }
 
-    // creating method which show all notes
-    private void showNotes() {
-
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                List<Note> notes = noteDatabase.notesDao().getNotes();
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        notesAdapter.setNotes(notes);
-                    }
-                });
-
-            }
-        });
-        thread.start();
-
-    }
 }
 
 
