@@ -27,11 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton buttonAddNotes;
     private NotesAdapter notesAdapter;
 
-
-
-    // creating array of notes by calling DatabaseNote.getInstance(); - the database from class
-    // DatabaseNote
-    private NoteDatabase noteDatabase;
+    private MainViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +35,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        noteDatabase = NoteDatabase.getInstance(getApplication());
+
 
 
         initViews();
         notesAdapter = new NotesAdapter();
+        viewModel = new MainViewModel(getApplication());
 
 
         // realization of erasing an element from the database by calling ClickListener which is
@@ -75,24 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
                 int position = viewHolder.getAdapterPosition();
                 Note note = notesAdapter.getNotes().get(position);
-
-
-                // creating new thread which permit to access ```noteDatabase.notesDao().
-                // remove(note.getId());``` from main thread
-                Thread thread = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        noteDatabase.notesDao().remove(note.getId());
-                        // refreshing view to show how  the  element erasing
-
-                        // this object handler call  in main  thread object runnable where  is
-                        // transmitted method show notes, because we cannot call a method crunching
-                        // data in background state(calling view element ) in the main thread
-
-
-                    }
-                });
-                thread.start();
+                viewModel.remove(note);
 
 
             }
@@ -111,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         // here I subscribe  to the object of LiveData. It is made for saving phone resources,
         // in such a way we don't need methods show and on Onswipe, the data is updating
         // automatically. Also  we  don't  need a handler.
-        noteDatabase.notesDao().getNotes().observe(this, new Observer<List<Note>>() {
+        viewModel.getNotes().observe(this, new Observer<List<Note>>() {
             @Override
             public void onChanged(List<Note> notes) {
                 notesAdapter.setNotes(notes);
