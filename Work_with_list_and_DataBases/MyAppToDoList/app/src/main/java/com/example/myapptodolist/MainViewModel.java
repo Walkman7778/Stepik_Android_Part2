@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
@@ -12,9 +13,11 @@ public class MainViewModel extends AndroidViewModel {
 
     private NoteDatabase noteDatabase;
 
+
     public MainViewModel(@NonNull Application application) {
         super(application);
-        noteDatabase = NoteDatabase.getInstance(application);
+        noteDatabase = NoteDatabase.getInstance(getApplication());
+
     }
 
 
@@ -31,6 +34,4 @@ public class MainViewModel extends AndroidViewModel {
         });
         thread.start();
     }
-
-
 }

@@ -13,12 +13,14 @@ import android.os.Bundle;
 
 
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 
 
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -29,31 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
     private MainViewModel viewModel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
-
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(MainViewModel.class);
 
         initViews();
         notesAdapter = new NotesAdapter();
-        viewModel = new MainViewModel(getApplication());
-
-
-        // realization of erasing an element from the database by calling ClickListener which is
-        // connected  by  the  adapter - adapter get an  activity OnClickListener in the class
-        // NoteAdapter method OnBindViewHolder
-        /* notesAdapter.setOnNoteClickListener(new NotesAdapter.OnNoteClickListener() {
-            @Override
-            public void OnNoteClick(Note note) {
-                databaseNote.removeNote(note.getId());
-                // refreshing view to show how  the  element erasing
-                showNotes();
-            }
-        });*/
 
         // realization of deleting note-(database.note) by swipe on left or right
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
@@ -95,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Note> notes) {
                 notesAdapter.setNotes(notes);
+
+
             }
         });
 
