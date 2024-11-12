@@ -3,11 +3,12 @@ package com.example.myapptodolist;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
-import androidx.room.Database;
 import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+
+import io.reactivex.rxjava3.core.Completable;
 
 @Dao
 public interface NotesDao {
@@ -18,7 +19,7 @@ public interface NotesDao {
     LiveData<List<Note>> getNotes();
 
     @Insert
-    void add(Note note);
+    Completable add(Note note);
 
 
     @Query("DELETE FROM notes WHERE id = :id")
