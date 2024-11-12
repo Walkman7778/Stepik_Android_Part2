@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -27,20 +29,30 @@ public class AddNoteActivity extends AppCompatActivity {
     private RadioButton radioButtonLow;
     private RadioButton radioButtonMedium;
     private Button btnMakeNote;
-
-
-    // object handler gets as argument Looper.getMainLooper() what means - main activity - main
-    // thread
-    private Handler handler = new Handler(Looper.getMainLooper());
-
-
-
+    // viewModel help us for saving and modifying AddNoteActivity changes by view ModelProvider
+    // and observer
+    private AddNoteViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_note_activity);
-        noteDatabase = NoteDatabase.getInstance(getApplication());
+
+
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(AddNoteViewModel.class);
+        viewModel.getShouldCloseScreen().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean shouldClose) {
+
+                if (shouldClose){
+                    finish();
+                }
+
+            }
+        });
+
+
+
         initViews();
 
 
@@ -50,6 +62,9 @@ public class AddNoteActivity extends AppCompatActivity {
                 saveNote();
             }
         });
+
+
+
 
 
     }
@@ -64,37 +79,12 @@ public class AddNoteActivity extends AppCompatActivity {
     }
 
     private void saveNote(){
-        // creating new thread for launching method save note and adding handler for closing the
-        // saving note method  thread
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // adding an Id for relative note from note list
-                // creating and adding next note to the related database example
-                String text = editText.getText().toString().trim();
-                int priority = getPriority();
-                Note note = new Note(text,   priority);
-                noteDatabase.notesDao().add(note);
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        finish();
-                    }
-                });
-
-            }
-        });
-        thread.start();
-
-
-
-
-
-
-
-
-
-
+        // creating new thread for launching method save note and adding by
+        // saving note method  MutableLiveData and ViewModelProvider
+        String text = editText.getText().toString().trim();
+        int priority = getPriority();
+        Note note = new Note(text,   priority);
+        viewModel.saveNote(note);
     }
 
 
