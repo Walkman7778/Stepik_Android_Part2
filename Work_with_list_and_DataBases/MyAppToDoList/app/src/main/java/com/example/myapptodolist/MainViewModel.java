@@ -9,22 +9,23 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
+import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainViewModel extends AndroidViewModel {
 
     private NotesDao notesDao;
-    private MutableLiveData<Boolean> ShouldCloseScreen = new MutableLiveData<>();
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
+
+    // creating variable MutableLiveData notes for possible changing it in DB NotesDao
+    private MutableLiveData<List<Note>>  notes = new MutableLiveData<>();
 
     public MainViewModel(@NonNull Application application) {
         super(application);
@@ -34,20 +35,40 @@ public class MainViewModel extends AndroidViewModel {
 
 
     public LiveData<List<Note>> getNotes(){
-        return notesDao.getNotes();
+        return notes;
     }
+
+
+    /* In method refreshList we use all  the  same types of disposable as in previous commit and
+     threads have the  same structure ,  the main difference is that we use Single type of RxJava3
+     library in NotesDao and consecutive in the refreshList method. We subscribe not to the new
+     Action but tu the new Consumer it helps for returning data not only fact of operating with
+     data*/
+    public void refreshList(){
+        Disposable disposable = notesDao.getNotes()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<List<Note>>() {
+                    @Override
+                    public void accept(List<Note> notesFromDb) throws Throwable {
+                        notes.setValue(notesFromDb);
+                    }
+                });
+        compositeDisposable.add(disposable);
+    }
+
+
 
 
     public void remove(Note note){
         Disposable disposable = notesDao.remove(note.getId())
-                .delay(5, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action() {
                     @Override
                     public void run() throws Throwable {
                         Log.d("MainViewModel","subscribe");
-                        ShouldCloseScreen.setValue(true);
+                        refreshList();
                     }
                 });
         compositeDisposable.add(disposable);
