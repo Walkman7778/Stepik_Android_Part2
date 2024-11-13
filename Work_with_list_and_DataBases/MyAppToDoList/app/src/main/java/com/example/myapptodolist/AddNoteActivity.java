@@ -33,6 +33,7 @@ public class AddNoteActivity extends AppCompatActivity {
     // and observer
     private AddNoteViewModel viewModel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +51,6 @@ public class AddNoteActivity extends AppCompatActivity {
 
             }
         });
-
-
-
         initViews();
 
 

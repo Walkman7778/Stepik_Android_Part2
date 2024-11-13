@@ -23,6 +23,6 @@ public interface NotesDao {
 
 
     @Query("DELETE FROM notes WHERE id = :id")
-    void remove(int id);
+    Completable remove(int id);
 
 }
