@@ -53,8 +53,13 @@ public class MainViewModel extends AndroidViewModel {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<List<Note>>() {
                     @Override
-                    public void accept(List<Note> notesFromDb) throws Throwable {
+                    public void accept(List<Note> notesFromDb) {
                         notes.setValue(notesFromDb);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Throwable {
+                        Log.d("MainViewModel","refreshList error");
                     }
                 });
         compositeDisposable.add(disposable);
@@ -70,7 +75,13 @@ public class MainViewModel extends AndroidViewModel {
                 .subscribe(new Action() {
                     @Override
                     public void run() throws Throwable {
-                        Log.d("MainViewModel","remove note" + note.getId());
+                        Log.d("MainViewModel", "remove note" + note.getId());
+                        refreshList();
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Throwable {
+                        Log.d("MainViewModel", "remove note error");
                         refreshList();
                     }
                 });
@@ -87,6 +98,7 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public List<Note> call() throws Exception {
                 return notesDao.getNotes();
+
             }
         });
     };
@@ -99,7 +111,10 @@ public class MainViewModel extends AndroidViewModel {
         return Completable.fromAction(new Action() {
             @Override
             public void run() throws Throwable {
-                notesDao.remove(note.getId());
+                /* here we commented getting a note in function removeRx as if it would be problem
+                of loading from internet  and it is adding a new consumer in function remove*/
+                //notesDao.remove(note.getId());
+                throw new Exception();
             }
         });
 
