@@ -15,15 +15,15 @@ import io.reactivex.rxjava3.core.Single;
 public interface NotesDao {
 
 
-    // subscribing to the LiveData
+    // subscribing to the data as if it would be simple data ,  and roomm  wouldn t work with it
     @Query("SELECT * FROM notes")
-    Single <List<Note>> getNotes();
+    List<Note> getNotes();
 
     @Insert
-    Completable add(Note note);
+    void add(Note note);
 
 
     @Query("DELETE FROM notes WHERE id = :id")
-    Completable remove(int id);
+    void remove(int id);
 
 }

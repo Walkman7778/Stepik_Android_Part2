@@ -12,6 +12,7 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Scheduler;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
@@ -37,7 +38,7 @@ public class AddNoteViewModel extends AndroidViewModel {
         MutableLiveData ------ this action is  made  in  ontoher way by using RxJava3 libraries
         just switching the threads  is  easier */
     public void saveNote(Note note){
-        Disposable disposable = notesDao.add(note)
+        Disposable disposable = addNoteRx(note)
                 .delay(5, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -51,12 +52,20 @@ public class AddNoteViewModel extends AndroidViewModel {
         compositeDisposable.add(disposable);
     }
 
-    /**
-     * This method will be called when this ViewModel is no longer used and will be destroyed.
-     * <p>
-     * It is useful when ViewModel observes some data and you need to clear this subscription to
-     * prevent a leak of this ViewModel.
-     */
+
+
+    private Completable addNoteRx(Note note){
+        return Completable.fromAction(new Action() {
+            @Override
+            public void run() throws Throwable {
+                notesDao.add(note);
+            }
+        });
+
+    }
+
+
+
     @Override
     protected void onCleared() {
         super.onCleared();

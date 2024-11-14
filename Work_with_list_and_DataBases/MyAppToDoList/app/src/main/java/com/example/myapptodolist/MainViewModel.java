@@ -9,8 +9,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
@@ -45,7 +48,7 @@ public class MainViewModel extends AndroidViewModel {
      Action but tu the new Consumer it helps for returning data not only fact of operating with
      data*/
     public void refreshList(){
-        Disposable disposable = notesDao.getNotes()
+        Disposable disposable = getNotesRx()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<List<Note>>() {
@@ -61,13 +64,13 @@ public class MainViewModel extends AndroidViewModel {
 
 
     public void remove(Note note){
-        Disposable disposable = notesDao.remove(note.getId())
+        Disposable disposable = removeRx(note)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action() {
                     @Override
                     public void run() throws Throwable {
-                        Log.d("MainViewModel","subscribe");
+                        Log.d("MainViewModel","remove note" + note.getId());
                         refreshList();
                     }
                 });
@@ -75,12 +78,41 @@ public class MainViewModel extends AndroidViewModel {
 
     }
 
-    /**
-     * This method will be called when this ViewModel is no longer used and will be destroyed.
-     * <p>
-     * It is useful when ViewModel observes some data and you need to clear this subscription to
-     * prevent a leak of this ViewModel.
-     */
+
+    /* creating new method getNotesRx which realize working with data in different threads as if it
+    would be type Single in the room library only  it  is own mwthod we must subscribe on it
+    otherwise it won't work */
+    private Single<List<Note>> getNotesRx() {
+        return Single.fromCallable(new Callable<List<Note>>() {
+            @Override
+            public List<Note> call() throws Exception {
+                return notesDao.getNotes();
+            }
+        });
+    };
+
+
+    /* creating new method getNotesRx which realize working with data in different threads as if it
+    would be type Completable in the room library only  it  is own mwthod we must subscribe on it
+    otherwise it won't work */
+    private Completable removeRx(Note note){
+        return Completable.fromAction(new Action() {
+            @Override
+            public void run() throws Throwable {
+                notesDao.remove(note.getId());
+            }
+        });
+
+    };
+
+    /* the difference from ```Single.fromCallable``` and ``Compleatble.fromAction``` is - the firs
+    function get as argument a list and return it as data but second don't transmit the list of data
+    in the callable function*/
+
+
+
+
+
     @Override
     protected void onCleared() {
         super.onCleared();
