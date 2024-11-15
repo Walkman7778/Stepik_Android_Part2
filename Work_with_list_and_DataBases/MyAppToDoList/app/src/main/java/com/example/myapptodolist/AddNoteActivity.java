@@ -41,16 +41,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
 
         viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(AddNoteViewModel.class);
-        viewModel.getShouldCloseScreen().observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean shouldClose) {
 
-                if (shouldClose){
-                    finish();
-                }
-
-            }
-        });
         initViews();
 
 

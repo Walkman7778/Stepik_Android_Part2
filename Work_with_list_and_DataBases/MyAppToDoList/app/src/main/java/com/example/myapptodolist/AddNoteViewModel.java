@@ -25,21 +25,13 @@ public class AddNoteViewModel extends AndroidViewModel {
     // here we subscribe to the notesDao directly.
     private NotesDao notesDao;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
-    private MutableLiveData<Boolean> ShouldCloseScreen = new MutableLiveData<>();
     public AddNoteViewModel(@NonNull Application application) {
         super(application);
         notesDao = NoteDatabase.getInstance(application).notesDao();
     }
 
-    public LiveData<Boolean> getShouldCloseScreen() {
-        return ShouldCloseScreen;
-    }
-    /* here we return new thread and install bool variable  ShouldCloseScreen in true by the  method
-         postValue in difference to the method setValue because getter has modifier LiveData and not
-        MutableLiveData ------ this action is  made  in  ontoher way by using RxJava3 libraries
-        just switching the threads  is  easier */
     public void saveNote(Note note){
-        Disposable disposable = addNoteRx(note)
+        Disposable disposable = notesDao.add(note)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action() {
@@ -60,14 +52,11 @@ public class AddNoteViewModel extends AndroidViewModel {
 
 
 
-    private Completable addNoteRx(Note note){
+    public Completable addNote(Note note){
         return Completable.fromAction(new Action() {
-            /* so we throw an exception which will be used in saveNote function and will emulate
-               error of adding new note */
             @Override
             public void run() throws Exception{
-              //  notesDao.add(note);
-                throw new Exception();
+                notesDao.add(note);
 
             }
         });

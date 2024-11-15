@@ -17,13 +17,13 @@ public interface NotesDao {
 
     // subscribing to the data as if it would be simple data ,  and roomm  wouldn t work with it
     @Query("SELECT * FROM notes")
-    List<Note> getNotes();
+    LiveData <List<Note>> getNotes();
 
     @Insert
-    void add(Note note);
+    Completable add(Note note);
 
 
     @Query("DELETE FROM notes WHERE id = :id")
-    void remove(int id);
+    Completable remove(int id);
 
 }
