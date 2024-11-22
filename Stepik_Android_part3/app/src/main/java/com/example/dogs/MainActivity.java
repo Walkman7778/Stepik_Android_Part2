@@ -1,7 +1,7 @@
 package com.example.dogs;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import java.io.BufferedReader;
@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void loadDogImage(){
+    private void loadDogImage() {
         // here  as  usual working  with  intrnet and all  operations in internet must  have their
         // own threads, so  for best  working is used new Thread
         new Thread(() -> {
@@ -33,8 +34,16 @@ public class MainActivity extends AppCompatActivity {
                 InputStream inputStream = uRLConnection.getInputStream();
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String result = bufferedReader.readLine();
-                Log.d("MainActivity", result);
+                String result;
+                StringBuilder data = new StringBuilder();
+
+                do {
+                    result = bufferedReader.readLine();
+                    if (result != null) {
+                        data.append(result);
+                    }
+                } while (result != null);
+                Log.d("MainActivity", data.toString());
 
             } catch (Exception e) {
                 Log.d("MainActivity", e.toString());
