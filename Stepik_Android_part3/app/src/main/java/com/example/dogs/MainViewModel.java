@@ -1,10 +1,12 @@
 package com.example.dogs;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.support.annotation.NonNull;
+
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.annotation.NonNull;
+
 import android.util.Log;
 
 import org.json.JSONObject;
@@ -14,6 +16,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.core.Single;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainViewModel extends AndroidViewModel {
 
@@ -25,6 +33,7 @@ public class MainViewModel extends AndroidViewModel {
     private static final String TAG = "MainViewModel";
 
     public MutableLiveData<DogImage> dogImage = new MutableLiveData<>();
+    private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
 
     public MainViewModel(@NonNull Application application) {
@@ -37,36 +46,41 @@ public class MainViewModel extends AndroidViewModel {
     }
 
     public void loadDogImage() {
-        // here  as  usual working  with  intrnet and all  operations in internet must  have their
-        // own threads, so  for best  working is used new Thread
-        new Thread(() -> {
-            try {
-                URL url = new URL(BASE_URL);
-                HttpURLConnection uRLConnection = (HttpURLConnection) url.openConnection();
-                InputStream inputStream = uRLConnection.getInputStream();
-                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                String result;
-                StringBuilder data = new StringBuilder();
-
-                do {
-                    result = bufferedReader.readLine();
-                    if (result != null) {
-                        data.append(result);
-                    }
-                } while (result != null);
-                JSONObject jsonObject = new JSONObject(data.toString());
-                String message = jsonObject.getString(KEY_MESSAGE);
-                String status = jsonObject.getString(KEY_STATUS);
-                DogImage image = new DogImage(message, status);
-                dogImage.postValue(image);
-
-            } catch (Exception e) {
-                Log.d(TAG, e.toString());
-            }
-        }).start();
+        Disposable disposable = loadDogImageRX().subscribeOn(Schedulers.io()).
+                observeOn(AndroidSchedulers.mainThread()).
+                subscribe(image -> dogImage.setValue(image), throwable -> Log.d(TAG, throwable.getMessage()));
+        compositeDisposable.add(disposable);
 
     }
 
+    private Single<DogImage> loadDogImageRX() {
+        return Single.fromCallable(() -> {
+            URL url = new URL(BASE_URL);
+            HttpURLConnection uRLConnection = (HttpURLConnection) url.openConnection();
+            InputStream inputStream = uRLConnection.getInputStream();
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String result;
+            StringBuilder data = new StringBuilder();
 
+            do {
+                result = bufferedReader.readLine();
+                if (result != null) {
+                    data.append(result);
+                }
+            } while (result != null);
+            JSONObject jsonObject = new JSONObject(data.toString());
+            String message = jsonObject.getString(KEY_MESSAGE);
+            String status = jsonObject.getString(KEY_STATUS);
+            return new DogImage(message, status);
+
+        });
+
+
+    }
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        compositeDisposable.dispose();
+    }
 }
