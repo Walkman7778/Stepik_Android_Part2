@@ -58,10 +58,8 @@ public class MainViewModel extends AndroidViewModel {
                 JSONObject jsonObject = new JSONObject(data.toString());
                 String message = jsonObject.getString(KEY_MESSAGE);
                 String status = jsonObject.getString(KEY_STATUS);
-                DogImage dogImage = new DogImage(message, status);
-
-
-                Log.d(TAG, dogImage.toString());
+                DogImage image = new DogImage(message, status);
+                dogImage.postValue(image);
 
             } catch (Exception e) {
                 Log.d(TAG, e.toString());
