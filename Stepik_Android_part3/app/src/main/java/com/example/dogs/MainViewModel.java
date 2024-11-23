@@ -65,9 +65,7 @@ public class MainViewModel extends AndroidViewModel {
 
             do {
                 result = bufferedReader.readLine();
-                if (result != null) {
-                    data.append(result);
-                }
+                data.append(result);
             } while (result != null);
             JSONObject jsonObject = new JSONObject(data.toString());
             String message = jsonObject.getString(KEY_MESSAGE);
