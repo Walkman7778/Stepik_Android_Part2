@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -32,12 +33,28 @@ public class MainActivity extends AppCompatActivity{
         initViews();
         MainViewModel viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(MainViewModel.class);
         viewModel.loadDogImage();
+        viewModel.loadingImage.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean loading) {
+                if(loading){
+                    progressBar.setVisibility(View.VISIBLE);
+                }else{
+                    progressBar.setVisibility(View.GONE);
+                }
+            }
+        });
         viewModel.getDogImage().observe(this, new Observer<DogImage>() {
             @Override
             public void onChanged(DogImage dogImage) {
                 if (dogImage != null) {
                     Glide.with(MainActivity.this).load(dogImage.getName()).into(imageView);
                 }
+            }
+        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewModel.loadDogImage();
             }
         });
     }
