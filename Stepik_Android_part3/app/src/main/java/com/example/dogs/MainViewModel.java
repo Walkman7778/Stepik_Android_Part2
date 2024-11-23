@@ -21,6 +21,8 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
+import io.reactivex.rxjava3.functions.Action;
+import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainViewModel extends AndroidViewModel {
@@ -33,6 +35,8 @@ public class MainViewModel extends AndroidViewModel {
     private static final String TAG = "MainViewModel";
 
     public MutableLiveData<DogImage> dogImage = new MutableLiveData<>();
+
+    public MutableLiveData<Boolean> loadingImage = new MutableLiveData<>();
     private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
 
@@ -45,9 +49,25 @@ public class MainViewModel extends AndroidViewModel {
         return dogImage;
     }
 
+    public LiveData<Boolean> getLoadDogImage() {
+        return loadingImage;
+    }
+
     public void loadDogImage() {
         Disposable disposable = loadDogImageRX().subscribeOn(Schedulers.io()).
-                observeOn(AndroidSchedulers.mainThread()).
+                observeOn(AndroidSchedulers.mainThread())
+                        .doOnSubscribe(new Consumer<Disposable>() {
+                            @Override
+                            public void accept(Disposable disposable) throws Throwable {
+                                loadingImage.setValue(Boolean.TRUE);
+                            }
+                        }).doAfterTerminate(new Action() {
+                    @Override
+                    public void run() throws Throwable {
+                        loadingImage.setValue(Boolean.FALSE);
+                    }
+                })
+                                .
                 subscribe(image -> dogImage.setValue(image), throwable -> Log.d(TAG, throwable.getMessage()));
         compositeDisposable.add(disposable);
 
