@@ -65,7 +65,6 @@ public class MainViewModel extends AndroidViewModel {
                             @Override
                             public void accept(Disposable disposable) throws Throwable {
                                 loadingImage.setValue(Boolean.TRUE);
-                                imposibileloading.setValue(Boolean.TRUE);
                             }
                         }).doAfterTerminate(new Action() {
                     @Override
@@ -75,7 +74,7 @@ public class MainViewModel extends AndroidViewModel {
                 }).doOnError(new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Throwable {
-                        imposibileloading.setValue(Boolean.FALSE);
+                        imposibileloading.setValue(Boolean.TRUE);
                     }
                 }).subscribe(image -> dogImage.setValue(image), throwable ->
                         Log.d(TAG, throwable.getMessage()));
