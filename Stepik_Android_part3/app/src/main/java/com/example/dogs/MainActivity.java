@@ -30,23 +30,28 @@ public class MainActivity extends AppCompatActivity{
     private ProgressBar progressBar;
     private Button button;
 
+    private MainViewModel viewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        MainViewModel viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(MainViewModel.class);
+        viewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication())).get(MainViewModel.class);
         viewModel.loadDogImage();
-        viewModel.imposibileloading.observe(this, new Observer<Boolean>() {
+        viewModel.getisError().observe(this, new Observer<Boolean>() {
             @Override
-            public void onChanged(Boolean notLoading) {
-                if(notLoading){
+            public void onChanged(Boolean isError) {
+                if(isError){
                     Toast.makeText(MainActivity.this,
-                            R.string.toasterror, Toast.LENGTH_LONG).show();
+                            R.string.toasterror,
+                            Toast.LENGTH_SHORT
+                    ).show();
                 }
             }
         });
-        viewModel.loadingImage.observe(this, new Observer<Boolean>() {
+
+        viewModel.getloadingImage().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean loading) {
                 if(loading){
@@ -59,11 +64,13 @@ public class MainActivity extends AppCompatActivity{
         viewModel.getDogImage().observe(this, new Observer<DogImage>() {
             @Override
             public void onChanged(DogImage dogImage) {
-                if (dogImage != null) {
-                    Glide.with(MainActivity.this).load(dogImage.getName()).into(imageView);
-                }
+                Glide.with(MainActivity.this)
+                        .load(dogImage.getMessage())
+                        .into(imageView);
+
             }
         });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
