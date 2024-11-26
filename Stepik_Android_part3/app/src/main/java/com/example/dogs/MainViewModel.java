@@ -28,16 +28,12 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 public class MainViewModel extends AndroidViewModel {
 
 
-    // writing a url adress
-    private static final String BASE_URL = "https://dog.ceo/api/breeds/image/random";
-    private static final String KEY_MESSAGE = "message";
-    private static final String KEY_STATUS = "status";
     private static final String TAG = "MainViewModel";
 
     public MutableLiveData<DogImage> dogImage = new MutableLiveData<>();
 
     public MutableLiveData<Boolean> loadingImage = new MutableLiveData<>();
-    public MutableLiveData<Boolean> imposibileloading = new MutableLiveData<>();
+    public MutableLiveData<Boolean> isError = new MutableLiveData<>();
     private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
 
@@ -50,12 +46,12 @@ public class MainViewModel extends AndroidViewModel {
         return dogImage;
     }
 
-    public LiveData<Boolean> getLoadDogImage() {
+    public LiveData<Boolean> getloadingImage() {
         return loadingImage;
     }
 
-    public LiveData<Boolean> getImposibileloading() {
-        return imposibileloading;
+    public LiveData<Boolean> getisError() {
+        return isError;
     }
 
     public void loadDogImage() {
@@ -64,47 +60,37 @@ public class MainViewModel extends AndroidViewModel {
                         .doOnSubscribe(new Consumer<Disposable>() {
                             @Override
                             public void accept(Disposable disposable) throws Throwable {
-                                loadingImage.setValue(Boolean.TRUE);
+                                loadingImage.setValue(true);
+                                isError.setValue(false);
+
                             }
                         }).doAfterTerminate(new Action() {
                     @Override
                     public void run() throws Throwable {
-                        loadingImage.setValue(Boolean.FALSE);
+                        loadingImage.setValue(false);
                     }
                 }).doOnError(new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Throwable {
-                        imposibileloading.setValue(Boolean.TRUE);
+                        isError.setValue(true);
                     }
-                }).subscribe(image -> dogImage.setValue(image), throwable ->
-                        Log.d(TAG, throwable.getMessage()));
+                }).subscribe(new Consumer<DogImage>() {
+                    @Override
+                    public void accept(DogImage image) throws Throwable {
+                        dogImage.setValue(image);
+                    }
+                }, new Consumer<Throwable>() {
+                    @Override
+                    public void accept(Throwable throwable) throws Throwable {
+                        Log.d(TAG, "Error: " + throwable.getMessage());
+                    }
+                });
+
         compositeDisposable.add(disposable);
 
     }
 
-    private Single<DogImage> loadDogImageRX() {
-        return Single.fromCallable(() -> {
-            URL url = new URL(BASE_URL);
-            HttpURLConnection uRLConnection = (HttpURLConnection) url.openConnection();
-            InputStream inputStream = uRLConnection.getInputStream();
-            InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            String result;
-            StringBuilder data = new StringBuilder();
-
-            do {
-                result = bufferedReader.readLine();
-                data.append(result);
-            } while (result != null);
-            JSONObject jsonObject = new JSONObject(data.toString());
-            String message = jsonObject.getString(KEY_MESSAGE);
-            String status = jsonObject.getString(KEY_STATUS);
-            return new DogImage(message, status);
-
-        });
-
-
-    }
+    private Single<DogImage> loadDogImageRX() { return ApiFactory.getApiService().loadDogImage();}
     @Override
     protected void onCleared() {
         super.onCleared();

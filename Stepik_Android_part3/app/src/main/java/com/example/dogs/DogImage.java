@@ -2,18 +2,18 @@ package com.example.dogs;
 
 public class DogImage {
 
-    private String name;
+    private String message;
     private String status;
 
 
     public DogImage(String name, String status) {
-        this.name = name;
+        this.message = name;
         this.status = status;
     }
 
 
-    public String getName() {
-        return name;
+    public String getMessage() {
+        return message;
     }
 
     public String getStatus() {
@@ -23,7 +23,7 @@ public class DogImage {
     @Override
     public String toString() {
         return "DogImage{" +
-                "name='" + name + '\'' +
+                "name='" + message + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }
