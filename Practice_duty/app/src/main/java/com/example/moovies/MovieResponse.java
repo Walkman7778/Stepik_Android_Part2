@@ -9,15 +9,21 @@ import java.util.List;
 public class MovieResponse {
 
     @SerializedName("docs")
-    private List<Movie> movieResponse;
+    private List<Movie> movies;
 
 
-    public MovieResponse(List<Movie> movieResponse) {
-        this.movieResponse = movieResponse;
+    public MovieResponse(List<Movie> movies) {
+        this.movies = movies;
     }
 
-    public List<Movie> getMovieResponse() {
-        return movieResponse;
+    public List<Movie> getMovies() {
+        return movies;
     }
 
+    @Override
+    public String toString() {
+        return "MovieResponse{" +
+                "movieResponse=" + movies +
+                '}';
+    }
 }
