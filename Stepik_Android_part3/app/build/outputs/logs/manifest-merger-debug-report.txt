@@ -1,0 +1,197 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\595554068089cefae14d0743ab5097a6\transformed\appcompat-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ptrin\.gradle\caches\transforms-3\13e16167675b0703369ad876dcfd0cfb\transformed\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.2] C:\Users\ptrin\.gradle\caches\transforms-3\d14435d30a0f19f627df96ccd15be91a\transformed\jetified-rxandroid-3.0.2\AndroidManifest.xml:15:1-20:12
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\27484f7581f0fa11cf33e7fa9a3b1786\transformed\jetified-glide-4.13.0\AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\d58132105ab173fe617d3377fd03fd9b\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\5eff1425e4617f572a315b3a04b185a4\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2365384ad980976d11b4bd9d48d00571\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\bf2a6d46c92d2b1b015ce44f75d834ab\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2d18f7f3f7ed5a6455f14952b81e2e98\transformed\vectordrawable-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.3.1] C:\Users\ptrin\.gradle\caches\transforms-3\9415112b8900e433de18b64d593876f3\transformed\fragment-1.3.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\7c3348565c4ba40b7c9c96b125443fa0\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\ptrin\.gradle\caches\transforms-3\897993a71f03989f5751d6fec1f87a90\transformed\exifinterface-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.1] C:\Users\ptrin\.gradle\caches\transforms-3\ecdc96891b3dbc8f828a264d70611a81\transformed\jetified-activity-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\6eaf261807bfdfb11a3a18692cc26456\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\dc95db927df936e003ea23f2b843af5c\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\f4e7914e58ba093567760f9d22f3626d\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\4a128805ae54552b7183634231e39ff5\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\ae4109ec1e873f2074e4c3a60211a759\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\064f6efcf72e45025c96c41bb0313fb3\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\3fa6512a9d4dee4adc600ab35404b8df\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\f967ef6252e4ec79b8a489b7b97a4a74\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\bb581f0f45aa35f890c6008351162320\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\62c5e7261b28a421717026579decefb0\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\788b2866ce1062b2ae316790421045ad\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\dc51215a0ae0eec1cc8d2679f7af5fd0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\0d1be357180595c9fada004a40a95f33\transformed\core-1.1.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\7a1ff5a23d45e8270cb10429ea4d29f7\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\929b6ceabb93307446cc51ba8bb0178b\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\c305219ed73d563ed22d76fafdbc2458\transformed\lifecycle-viewmodel-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\6cb7b19c21de687d9940d58729e3fbe3\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\fe726d578f90e61f945e51ad06a99ee0\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\bbf710e5a7accc5ff9d9b2503d4ea8ac\transformed\lifecycle-runtime-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\eb59ad3ff2cc3f8ea455ecf10b9a5b47\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\e7175d46257e0af1a9dfe482b99e9290\transformed\lifecycle-livedata-core-2.3.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\94c1e08774be1a91ac7aa4bf2cb72cb3\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2888cef9e7b9741d1c08872ef0fd4bdf\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+	package
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:1-27:12
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:5:5-66
+	android:name
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:7:5-25:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ptrin\.gradle\caches\transforms-3\13e16167675b0703369ad876dcfd0cfb\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ptrin\.gradle\caches\transforms-3\13e16167675b0703369ad876dcfd0cfb\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\27484f7581f0fa11cf33e7fa9a3b1786\transformed\jetified-glide-4.13.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\27484f7581f0fa11cf33e7fa9a3b1786\transformed\jetified-glide-4.13.0\AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\7c3348565c4ba40b7c9c96b125443fa0\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\7c3348565c4ba40b7c9c96b125443fa0\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\0d1be357180595c9fada004a40a95f33\transformed\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\0d1be357180595c9fada004a40a95f33\transformed\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\7a1ff5a23d45e8270cb10429ea4d29f7\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\7a1ff5a23d45e8270cb10429ea4d29f7\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\0d1be357180595c9fada004a40a95f33\transformed\core-1.1.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:12:9-41
+	android:fullBackupContent
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:10:9-54
+	tools:targetApi
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:15:9-29
+	android:icon
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:8:9-35
+	android:theme
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:14:9-42
+	android:dataExtractionRules
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:9:9-65
+activity#com.example.dogs.MainActivity
+ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:16:9-24:20
+	android:exported
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:18:13-36
+	android:name
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:17:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml:22:27-74
+uses-sdk
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\595554068089cefae14d0743ab5097a6\transformed\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\595554068089cefae14d0743ab5097a6\transformed\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ptrin\.gradle\caches\transforms-3\13e16167675b0703369ad876dcfd0cfb\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\ptrin\.gradle\caches\transforms-3\13e16167675b0703369ad876dcfd0cfb\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.2] C:\Users\ptrin\.gradle\caches\transforms-3\d14435d30a0f19f627df96ccd15be91a\transformed\jetified-rxandroid-3.0.2\AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.2] C:\Users\ptrin\.gradle\caches\transforms-3\d14435d30a0f19f627df96ccd15be91a\transformed\jetified-rxandroid-3.0.2\AndroidManifest.xml:18:5-43
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\27484f7581f0fa11cf33e7fa9a3b1786\transformed\jetified-glide-4.13.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\27484f7581f0fa11cf33e7fa9a3b1786\transformed\jetified-glide-4.13.0\AndroidManifest.xml:6:5-8:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\d58132105ab173fe617d3377fd03fd9b\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\d58132105ab173fe617d3377fd03fd9b\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\5eff1425e4617f572a315b3a04b185a4\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\5eff1425e4617f572a315b3a04b185a4\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2365384ad980976d11b4bd9d48d00571\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2365384ad980976d11b4bd9d48d00571\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\bf2a6d46c92d2b1b015ce44f75d834ab\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\bf2a6d46c92d2b1b015ce44f75d834ab\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2d18f7f3f7ed5a6455f14952b81e2e98\transformed\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2d18f7f3f7ed5a6455f14952b81e2e98\transformed\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.3.1] C:\Users\ptrin\.gradle\caches\transforms-3\9415112b8900e433de18b64d593876f3\transformed\fragment-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.1] C:\Users\ptrin\.gradle\caches\transforms-3\9415112b8900e433de18b64d593876f3\transformed\fragment-1.3.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\7c3348565c4ba40b7c9c96b125443fa0\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.13.0] C:\Users\ptrin\.gradle\caches\transforms-3\7c3348565c4ba40b7c9c96b125443fa0\transformed\jetified-gifdecoder-4.13.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\ptrin\.gradle\caches\transforms-3\897993a71f03989f5751d6fec1f87a90\transformed\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.2.0] C:\Users\ptrin\.gradle\caches\transforms-3\897993a71f03989f5751d6fec1f87a90\transformed\exifinterface-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.1] C:\Users\ptrin\.gradle\caches\transforms-3\ecdc96891b3dbc8f828a264d70611a81\transformed\jetified-activity-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.1] C:\Users\ptrin\.gradle\caches\transforms-3\ecdc96891b3dbc8f828a264d70611a81\transformed\jetified-activity-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\6eaf261807bfdfb11a3a18692cc26456\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\6eaf261807bfdfb11a3a18692cc26456\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\dc95db927df936e003ea23f2b843af5c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\dc95db927df936e003ea23f2b843af5c\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\f4e7914e58ba093567760f9d22f3626d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\f4e7914e58ba093567760f9d22f3626d\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\4a128805ae54552b7183634231e39ff5\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\4a128805ae54552b7183634231e39ff5\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\ae4109ec1e873f2074e4c3a60211a759\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\ae4109ec1e873f2074e4c3a60211a759\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\064f6efcf72e45025c96c41bb0313fb3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\064f6efcf72e45025c96c41bb0313fb3\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\3fa6512a9d4dee4adc600ab35404b8df\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\3fa6512a9d4dee4adc600ab35404b8df\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\f967ef6252e4ec79b8a489b7b97a4a74\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\f967ef6252e4ec79b8a489b7b97a4a74\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\bb581f0f45aa35f890c6008351162320\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\bb581f0f45aa35f890c6008351162320\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\62c5e7261b28a421717026579decefb0\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\62c5e7261b28a421717026579decefb0\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\788b2866ce1062b2ae316790421045ad\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\788b2866ce1062b2ae316790421045ad\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\dc51215a0ae0eec1cc8d2679f7af5fd0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\dc51215a0ae0eec1cc8d2679f7af5fd0\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\0d1be357180595c9fada004a40a95f33\transformed\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\0d1be357180595c9fada004a40a95f33\transformed\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\7a1ff5a23d45e8270cb10429ea4d29f7\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\7a1ff5a23d45e8270cb10429ea4d29f7\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\929b6ceabb93307446cc51ba8bb0178b\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\929b6ceabb93307446cc51ba8bb0178b\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\c305219ed73d563ed22d76fafdbc2458\transformed\lifecycle-viewmodel-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\c305219ed73d563ed22d76fafdbc2458\transformed\lifecycle-viewmodel-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\6cb7b19c21de687d9940d58729e3fbe3\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\6cb7b19c21de687d9940d58729e3fbe3\transformed\jetified-savedstate-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\fe726d578f90e61f945e51ad06a99ee0\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\fe726d578f90e61f945e51ad06a99ee0\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\bbf710e5a7accc5ff9d9b2503d4ea8ac\transformed\lifecycle-runtime-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\bbf710e5a7accc5ff9d9b2503d4ea8ac\transformed\lifecycle-runtime-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\eb59ad3ff2cc3f8ea455ecf10b9a5b47\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\eb59ad3ff2cc3f8ea455ecf10b9a5b47\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\e7175d46257e0af1a9dfe482b99e9290\transformed\lifecycle-livedata-core-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0] C:\Users\ptrin\.gradle\caches\transforms-3\e7175d46257e0af1a9dfe482b99e9290\transformed\lifecycle-livedata-core-2.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\94c1e08774be1a91ac7aa4bf2cb72cb3\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\ptrin\.gradle\caches\transforms-3\94c1e08774be1a91ac7aa4bf2cb72cb3\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2888cef9e7b9741d1c08872ef0fd4bdf\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ptrin\.gradle\caches\transforms-3\2888cef9e7b9741d1c08872ef0fd4bdf\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\ptrin\OneDrive\Desktop\StepikMyApp1\Stepik_Android_part2\Stepik_Android_part3\app\src\main\AndroidManifest.xml
