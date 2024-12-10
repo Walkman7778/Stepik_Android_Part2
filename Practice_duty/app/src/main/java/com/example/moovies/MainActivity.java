@@ -31,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAG, movies.toString());
             }
         });
+        viewModel.loadMovies();
     }
 }
