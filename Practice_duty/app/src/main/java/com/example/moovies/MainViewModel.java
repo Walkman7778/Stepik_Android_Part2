@@ -26,6 +26,7 @@ public class MainViewModel extends AndroidViewModel {
 
     private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
+
     private int page = 1;
 
     public MainViewModel(@NonNull Application application) {

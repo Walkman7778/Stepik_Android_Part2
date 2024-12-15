@@ -1,21 +1,24 @@
 package com.example.moovies;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Rating {
 
-    private String rating;
+    @SerializedName("kp")
+    private String rating1;
 
-    public Rating(String rating) {
-        this.rating = rating;
+    public Rating(String kp) {
+        this.rating1 = rating1;
     }
 
-    public String getRating() {
-        return rating;
+    public String getRating1() {
+        return rating1;
     }
 
     @Override
     public String toString() {
         return "Rating{" +
-                "rating='" + rating + '\'' +
+                "rating='" + rating1 + '\'' +
                 '}';
     }
 }
