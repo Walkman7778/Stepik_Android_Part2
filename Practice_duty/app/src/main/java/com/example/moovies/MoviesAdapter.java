@@ -1,5 +1,6 @@
 package com.example.moovies;
 
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -19,9 +21,6 @@ import java.util.List;
 import java.util.zip.Inflater;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
-
-
-
 
 
     private List<Movie> movies = new ArrayList<>();
@@ -53,7 +52,22 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 .load(movie.getPoster()
                         .getUrl())
                 .into(holder.imageViewPoster);
-        holder.textViewRating.setText(movie.getRating().getRating1());
+
+        double rating = movie.getRating().getRating1();
+        int backgroundId;
+        if (rating > 7) {
+            backgroundId = R.drawable.circle_green;
+        } else if (rating > 5) {
+            backgroundId = R.drawable.circle_orange;
+        } else {
+            backgroundId = R.drawable.circle_red;
+        }
+
+        Drawable backround = ContextCompat.getDrawable(holder.itemView.getContext(), backgroundId);
+
+        holder.textViewRating.setText(String.valueOf(rating));
+
+
     }
 
     @Override
@@ -61,16 +75,16 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         return movies.size();
     }
 
-    static class MovieViewHolder extends RecyclerView.ViewHolder{
+    static class MovieViewHolder extends RecyclerView.ViewHolder {
         private final ImageView imageViewPoster;
         private final TextView textViewRating;
+
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
             imageViewPoster = itemView.findViewById(R.id.imageViewPoster);
             textViewRating = itemView.findViewById(R.id.textViewRating);
         }
     }
-
 
 
 }
