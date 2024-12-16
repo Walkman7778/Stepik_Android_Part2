@@ -8,7 +8,7 @@ public interface ApiService {
 
 
 
-    @GET("movie?token=RQ2NZWV-WW3MRB4-Q5YAGB6-XNF3H5T&field=rating.kp&search=7-10&sortField=votes.kp&sortType=-1&limit=30")
+    @GET("movie?token=RQ2NZWV-WW3MRB4-Q5YAGB6-XNF3H5T&field=rating.kp&search=7-10&sortField=votes.kp&sortType=-1&limit=100")
     Single<MovieResponse> loadMovies(@Query("page") int page);
 
 

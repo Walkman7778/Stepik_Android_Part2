@@ -64,6 +64,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
         }
 
         Drawable backround = ContextCompat.getDrawable(holder.itemView.getContext(), backgroundId);
+        holder.textViewRating.setBackground(backround);
 
         holder.textViewRating.setText(String.valueOf(rating));
 
