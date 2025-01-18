@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e93823a5-3867-4948-bc6b-46a989099db7" name="Changes" comment="creating new MovieApp">
+      <change afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/ApiFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/ApiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice_duty/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice_duty/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice_duty/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/MovieResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/MovieResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/Poster.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/Poster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Practice_duty/app/src/main/java/com/example/moovies/Rating.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ptrin\.android\avd\1_Pixel_5_API_30.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2pAVxuCIdYAbTAHfoJQGmitpBlj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ApkExportedModule&quot;: &quot;Dogs.app&quot;,
+    &quot;BundleExportedModule&quot;: &quot;Dogs.app&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="Dogs.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e93823a5-3867-4948-bc6b-46a989099db7" name="Changes" comment="" />
+      <created>1732209125038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732209125038</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Working with Internet, App Dogs">
+      <created>1732213136861</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732213136861</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Working with Internet, App Dogs">
+      <created>1732213423063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732213423063</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Working with Internet, App Dogs- working with more than 1 &#10;line respond using StringBuilder">
+      <created>1732291440766</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732291440766</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Working with Internet, App Dogs- working with more than 1 &#10;line respond using JsonObject and building a class dogImage&#10;object">
+      <created>1732294369883</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732294369883</updated>
+    </task>
+    <task id="LOCAL-00005" summary="creating ViewModel and moving all logic of loading data into&#10;the viewModel">
+      <created>1732302294139</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732302294139</updated>
+    </task>
+    <task id="LOCAL-00006" summary="creating ViewModel and moving all logic of loading data into&#10;the viewModel/ updating LiveData from MainViewModel">
+      <created>1732302604319</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732302604319</updated>
+    </task>
+    <task id="LOCAL-00007" summary="using RXJava in MainViewModel, also working with threads in &#10;Single type of data using lambda functions, using &#10;CompositeDisposable and disposable subscribes on callable &#10;events">
+      <created>1732305395619</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732305395619</updated>
+    </task>
+    <task id="LOCAL-00008" summary="realization of integration of Glide library implementation&#10;for loading the picture from internet">
+      <created>1732374907820</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732374907820</updated>
+    </task>
+    <task id="LOCAL-00009" summary="callable methods .doOnSubscribe() and .doAfterTerminate() &#10;which are used in the function loadDogImage(). Also adding a&#10;click listener and observer for the visibility of progress &#10;bar">
+      <created>1732388390387</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732388390387</updated>
+    </task>
+    <task id="LOCAL-00010" summary="make toast when loading is impossible or was detected an &#10;error">
+      <created>1732390257332</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732390257332</updated>
+    </task>
+    <task id="LOCAL-00011" summary="corercting error of loading event">
+      <created>1732468196204</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732468196204</updated>
+    </task>
+    <task id="LOCAL-00012" summary="corercting error of loading event">
+      <created>1732468210322</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732468210322</updated>
+    </task>
+    <task id="LOCAL-00013" summary="correcting some names ,  and  using library Retrofit , for &#10;loading from internet pictures">
+      <created>1732650724689</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732650724689</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixing changes in manifest file">
+      <created>1732853304886</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732853304886</updated>
+    </task>
+    <task id="LOCAL-00015" summary="creating new MovieApp">
+      <created>1733645182178</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733645182178</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working with Internet, App Dogs" />
+    <MESSAGE value="Working with Internet, App Dogs- working with more than 1 &#10;line respond" />
+    <MESSAGE value="Working with Internet, App Dogs- working with more than 1 &#10;line respond using StringBuilder" />
+    <MESSAGE value="Working with Internet, App Dogs- working with more than 1 &#10;line respond using JsonObject and building a class dogImage&#10;object" />
+    <MESSAGE value="creating ViewModel and moving all logic of loading data into&#10;the viewModel" />
+    <MESSAGE value="creating ViewModel and moving all logic of loading data into&#10;the viewModel/ updating LiveData from MainViewModel" />
+    <MESSAGE value="using RXJava in MainViewModel, also working with threads in &#10;Single type of data using lambda functions, using &#10;CompositeDisposable and disposable subscribes on callable &#10;events" />
+    <MESSAGE value="realization of integration of Glide library implementation&#10;for loading the picture from internet" />
+    <MESSAGE value="callable methods .doOnSubscribe() and .doAfterTerminate() &#10;which are used in the function loadDogImage(). Also adding a&#10;click listener and observer for the visibility of progress &#10;bar" />
+    <MESSAGE value="make toast when loading is impossible or was detected an &#10;error" />
+    <MESSAGE value="corercting error of loading event" />
+    <MESSAGE value="correcting some names ,  and  using library Retrofit , for &#10;loading from internet pictures" />
+    <MESSAGE value="fixing changes in manifest file" />
+    <MESSAGE value="creating new MovieApp" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating new MovieApp" />
+  </component>
+</project>
